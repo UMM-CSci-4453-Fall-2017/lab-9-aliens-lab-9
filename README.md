@@ -8,9 +8,9 @@ Now it is it time to finish off this register project.  As you implement the fun
 * Think about what it would take to write a procedure (or trigger) that would identify DEALS in the current till_items and update your table to reflect the new pricing.  Talk it over with your partners until you are convinced that you understand what needs to be done... then relax and congratulate yourselves on a job well done.
 *  Modify your click API entry so the time stamp of a button is also recorded.
 * Add REST handlers to deal with SALE and VOID.  You can decide whether or not to use till_buttons or hard-code the buttons into your angular template.  Produce your logic and button accordingly:
-    * Add a **void** button that will erase all the curent contents in the register, 
+    * Add a **void** button that will erase all the curent contents in the register,
     * Add a **sale** button.  (more on this below)
-* Clicking on **sale** should implement special functionality that copies the till_items to a special archive (you will have to make an archive table).  The archive table should have a new field called transactionID and user.  (This is breaking some of the rules of normalization... be prepared to tell me in person what the poetential problems are and the proper way to fix them).  You can achieve this functionality however you like as long as it occurs on the DBF server.  Both procedures and triggers are viable options.  Be sure that your *sale* functionality adds an entry in the archive denoting the clicking of the sale button.
+* Clicking on **sale** should implement special functionality that copies the till_items to a special archive (you will have to make an archive table).  The archive table should have a new field called transactionID and user.  (This is breaking some of the rules of normalization... be prepared to tell me in person what the potential problems are and the proper way to fix them).  You can achieve this functionality however you like as long as it occurs on the DBF server.  Both procedures and triggers are viable options.  Be sure that your *sale* functionality adds an entry in the archive denoting the clicking of the sale button.
 * Clicking on **void** does not have to add an entry in the archive (although you can do so if you like as long as such entries can be clearly identfied as voided transactions)
 * Create a a view called `transactionSummary` that summarizes the transactions in the archive table.  It should show:
 
@@ -27,4 +27,3 @@ Now it is it time to finish off this register project.  As you implement the fun
    * Add a TICKETIZE option to your API that calls a suitably modified `ticketize` function (on the DBF side) to generate a JSON object that would, presumably, be used by a function to print out the receipt
    * Add javascript to your HTML template that pops up a suitable "receipt"
 * Finally, you should expand your API document into a complete user manual (preferably with a few screen shots).  Make the API details into an appendix at the end.  (Don't go crazy on this step... but don't just gloss over it either...)
-
